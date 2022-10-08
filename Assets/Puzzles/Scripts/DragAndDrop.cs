@@ -14,10 +14,9 @@ public class DragAndDrop : MonoBehaviour
     }
  
 
-     void Update()
+     void OnMouseDown()
     {
-        if (Input.GetMouseButtonDown(0))
-        {
+      
             if (!sensores.ocupadoRight)
             {
                 gameObject.transform.position = gameObject.transform.position + new Vector3(1, 0, 0);
@@ -43,7 +42,7 @@ public class DragAndDrop : MonoBehaviour
                 puzzle.EsGanador();
                 print("Hola");
             }
-        }
+        
         
     }
 

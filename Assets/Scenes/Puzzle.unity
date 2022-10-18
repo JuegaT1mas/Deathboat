@@ -269,65 +269,6 @@ Transform:
   m_Father: {fileID: 2073644520}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &885679346
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 885679348}
-  - component: {fileID: 885679347}
-  m_Layer: 0
-  m_Name: Scripts
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &885679347
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 885679346}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 380be6d85af10bd459653b17c5a5b064, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  fichaImg:
-  - {fileID: 865141060, guid: c334dfb8b1a3a9e4a98c7147c82651b5, type: 3}
-  - {fileID: -2120083341, guid: c334dfb8b1a3a9e4a98c7147c82651b5, type: 3}
-  - {fileID: 541105355, guid: c334dfb8b1a3a9e4a98c7147c82651b5, type: 3}
-  - {fileID: -1092544676, guid: c334dfb8b1a3a9e4a98c7147c82651b5, type: 3}
-  - {fileID: 646684926, guid: c334dfb8b1a3a9e4a98c7147c82651b5, type: 3}
-  - {fileID: 566763864, guid: c334dfb8b1a3a9e4a98c7147c82651b5, type: 3}
-  - {fileID: -757551610, guid: c334dfb8b1a3a9e4a98c7147c82651b5, type: 3}
-  - {fileID: 412003067, guid: c334dfb8b1a3a9e4a98c7147c82651b5, type: 3}
-  - {fileID: 694581248, guid: c334dfb8b1a3a9e4a98c7147c82651b5, type: 3}
-  fichaPrefab: {fileID: 5078012673560168431, guid: 6e56c7ee937726e4aa460f6195b2b3ee,
-    type: 3}
-  bordePrefab: {fileID: 7362334228385482343, guid: f2abb39bbff1a45418d8bd08b0229031,
-    type: 3}
-  fichaEscondidaImg: {fileID: 694581248, guid: c334dfb8b1a3a9e4a98c7147c82651b5, type: 3}
---- !u!4 &885679348
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 885679346}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 5.495117, y: 4.5585465, z: 15.595929}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 3
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &893920103
 GameObject:
   m_ObjectHideFlags: 0
@@ -486,6 +427,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2073644520}
+  - component: {fileID: 2073644521}
   m_Layer: 0
   m_Name: Puzzle
   m_TagString: Untagged
@@ -510,3 +452,30 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2073644521
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2073644519}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 380be6d85af10bd459653b17c5a5b064, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fichaImg:
+  - {fileID: 865141060, guid: c334dfb8b1a3a9e4a98c7147c82651b5, type: 3}
+  - {fileID: -2120083341, guid: c334dfb8b1a3a9e4a98c7147c82651b5, type: 3}
+  - {fileID: 541105355, guid: c334dfb8b1a3a9e4a98c7147c82651b5, type: 3}
+  - {fileID: -1092544676, guid: c334dfb8b1a3a9e4a98c7147c82651b5, type: 3}
+  - {fileID: 646684926, guid: c334dfb8b1a3a9e4a98c7147c82651b5, type: 3}
+  - {fileID: 566763864, guid: c334dfb8b1a3a9e4a98c7147c82651b5, type: 3}
+  - {fileID: -757551610, guid: c334dfb8b1a3a9e4a98c7147c82651b5, type: 3}
+  - {fileID: 412003067, guid: c334dfb8b1a3a9e4a98c7147c82651b5, type: 3}
+  - {fileID: 694581248, guid: c334dfb8b1a3a9e4a98c7147c82651b5, type: 3}
+  fichaPrefab: {fileID: 5078012673560168431, guid: 6e56c7ee937726e4aa460f6195b2b3ee,
+    type: 3}
+  bordePrefab: {fileID: 7362334228385482343, guid: f2abb39bbff1a45418d8bd08b0229031,
+    type: 3}
+  fichaEscondidaImg: {fileID: 694581248, guid: c334dfb8b1a3a9e4a98c7147c82651b5, type: 3}

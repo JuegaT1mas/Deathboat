@@ -19,7 +19,7 @@ public class Puzzle : MonoBehaviour
     GameObject[] fichas;
 
 
-    private void Awake()
+    public void IniciarPuzzle()
     {
         //recuperamos el padre de las fichas y de los bordes
         padreFichas = GameObject.Find("Fichas");
@@ -71,6 +71,7 @@ public class Puzzle : MonoBehaviour
         }
         //Mezclamos las fichas para que salgan desordenadas
         MezclarFichas();
+        
     }
 
 
@@ -85,6 +86,8 @@ public class Puzzle : MonoBehaviour
             fichas[random].transform.position = pos;
         }
     }
+
+
 
     public void EsGanador() {
         for (int i=0;i<fichas.Length;i++) {

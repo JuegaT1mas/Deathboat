@@ -10,7 +10,7 @@ public class DragAndDrop : MonoBehaviour
     void Awake()
     {
         sensores = GetComponentInChildren(typeof(Sensores)) as Sensores;
-        puzzle = GameObject.Find("Scripts").GetComponent(typeof(Puzzle)) as Puzzle;
+        puzzle = GameObject.Find("Puzzle1").GetComponent(typeof(Puzzle)) as Puzzle;
     }
  
 
@@ -21,26 +21,24 @@ public class DragAndDrop : MonoBehaviour
             {
                 gameObject.transform.position = gameObject.transform.position + new Vector3(1, 0, 0);
                 puzzle.EsGanador();
-                print("Hola");
 
             }
             else if (!sensores.ocupadoLeft)
             {
                 gameObject.transform.position = gameObject.transform.position + new Vector3(-1, 0, 0);
                 puzzle.EsGanador();
-                print("Hola");
             }
             else if (!sensores.ocupadoDown)
             {
                 gameObject.transform.position = gameObject.transform.position + new Vector3(0, -1, 0);
                 puzzle.EsGanador();
-                print("Hola");
+             
             }
             else if (!sensores.ocupadoUp)
             {
                 gameObject.transform.position = gameObject.transform.position + new Vector3(0, 1, 0);
                 puzzle.EsGanador();
-                print("Hola");
+            
             }
         
         

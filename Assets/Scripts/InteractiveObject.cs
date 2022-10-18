@@ -4,8 +4,11 @@ using UnityEngine;
 
 public class InteractiveObject : MonoBehaviour
 {
+    Puzzle puzzle1;
    public void ActivarObjeto()
     {
-        Destroy(gameObject);
+        puzzle1 = GameObject.Find("Puzzle1").GetComponent<Puzzle>();
+        puzzle1.IniciarPuzzle();
+
     }
 }

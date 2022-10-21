@@ -13,16 +13,12 @@ namespace StarterAssets
 		public bool jump;
 		public bool sprint;
 
-		//Añadido nuestro a partir de aqui
-		public bool crouch;
-
 		[Header("Movement Settings")]
 		public bool analogMovement;
 
 		[Header("Mouse Cursor Settings")]
 		public bool cursorLocked = true;
 		public bool cursorInputForLook = true;
-
 
 #if ENABLE_INPUT_SYSTEM && STARTER_ASSETS_PACKAGES_CHECKED
 		public void OnMove(InputValue value)
@@ -47,12 +43,6 @@ namespace StarterAssets
 		{
 			SprintInput(value.isPressed);
 		}
-
-		//Lo nuevo añadido a partir de aqui
-		public void OnCrouch(InputValue value)
-        {
-			CrouchInput(value.isPressed);
-        }
 #endif
 
 
@@ -85,13 +75,6 @@ namespace StarterAssets
 		{
 			Cursor.lockState = newState ? CursorLockMode.Locked : CursorLockMode.None;
 		}
-
-		public void CrouchInput(bool newCrouchState)
-        {
-			crouch = newCrouchState;
-        }
-
-		//Lo nuevo añadido a partir de aqui
 	}
 	
 }

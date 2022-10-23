@@ -1286,7 +1286,8 @@ MonoBehaviour:
     type: 3}
   bordePrefab: {fileID: 1632247733153410985, guid: e395eb1842444074782214088e452010,
     type: 3}
-  fichaEscondidaImg: {fileID: 477818618, guid: 9f6c85bd53db2694caff698e490bfc84, type: 3}
+  fichaEscondidaImg: {fileID: -1250790359, guid: 9f6c85bd53db2694caff698e490bfc84,
+    type: 3}
 --- !u!4 &2078235252
 Transform:
   m_ObjectHideFlags: 0
@@ -1810,6 +1811,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   distancia: 1.5
   TextDetect: {fileID: 0}
+  puzzleActivado: 0
 --- !u!114 &135756641613574975 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 5420857361349278248, guid: c5efc39a8aaf6e64ea40e9ad573e9b47,

@@ -45,6 +45,7 @@ public class Selected : MonoBehaviour
                     {
                         AbrirPuzzle(hit);
                         puzzleActivado = true;
+                        Cursor.lockState = CursorLockMode.None;
                     }
                 }
             }
@@ -77,7 +78,7 @@ public class Selected : MonoBehaviour
 
      void OnGUI()
     {
-      
+
         //if (ultimoReconocido != null)
         //{
         //    TextDetect.SetActive(true);

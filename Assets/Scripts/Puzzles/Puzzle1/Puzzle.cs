@@ -10,7 +10,7 @@ public class Puzzle : MonoBehaviour
     public Sprite fichaEscondidaImg;//la ficha que falta en el puzle
 
 
-
+    int[,] puzzleMezclado = new int[3, 3] { { 0, 1, 2 }, { 3, 4, 5 }, { 6,7,8 } };
     GameObject fichaEscondida;
     int numCostado = 3;//sera 3 porque es un puzle 3x3
     GameObject padreFichas;
@@ -66,20 +66,32 @@ public class Puzzle : MonoBehaviour
                 }
             }
         }
-        fichaEscondida.gameObject.SetActive(false);
+       
 
         fichas = GameObject.FindGameObjectsWithTag("Ficha");//metemos todos los gameobject de las fichas dentro de un array
+        fichaEscondida.gameObject.SetActive(false);
         for (int i = 0; i < fichas.Length; i++)
         {
             posicionesIniciales.Add(fichas[i].transform.position);//guardamos la posicion correcta del puzzle
         }
         //Mezclamos las fichas para que salgan desordenadas
-        MezclarFichas();
+        do
+        {
+            MezclarFichas();
+        } while (!isSolvable(puzzleMezclado));
+        
+            
+        
+       
+
     }
 
 
     void MezclarFichas()
     {
+        puzzleMezclado = new int[3, 3] { { 0, 1, 2 }, { 3, 4, 5 }, { 6, 7, 8 } };
+        int x = -1;
+        int y = 0;
         int random;
         for (int i = 0; i < fichas.Length; i++)
         {
@@ -87,9 +99,55 @@ public class Puzzle : MonoBehaviour
             Vector3 pos = fichas[i].transform.position;
             fichas[i].transform.position = fichas[random].transform.position;
             fichas[random].transform.position = pos;
+
+            //if (x < 2)
+            //{
+            //    x++;
+            //}
+            //else
+            //{
+            //    x = 0;
+            //    y++;
+            //}
+            int aux = puzzleMezclado[i % 3, i / 3];
+            puzzleMezclado[i%3, i/3] = puzzleMezclado[random%3,random/3];
+            puzzleMezclado[random%3,random/3]=aux;
         }
+
+        Debug.Log("Hola");
+
+
+    }
+    static int getInvCount(int[] arr)
+    {
+        int inv_count = 0;
+        for (int i = 0; i < 9; i++)
+            for (int j = i + 1; j < 9; j++)
+
+                // Value 0 is used for empty space
+                if (arr[i] > 0 && arr[j] > 0 && arr[i] > arr[j])
+                    inv_count++;
+        return inv_count;
     }
 
+    // This function returns true
+    // if given 8 puzzle is solvable.
+    static bool isSolvable(int[,] puzzle)
+    {
+        int[] linearForm;
+        linearForm = new int[9];
+        int k = 0;
+
+        for (int i = 0; i < 3; i++)
+            for (int j = 0; j < 3; j++)
+                linearForm[k++] = puzzle[i, j];
+
+        // Count inversions in given 8 puzzle
+        int invCount = getInvCount(linearForm);
+
+        // return true if inversion count is even.
+        return (invCount % 2 == 0);
+    }
     public void EsGanador()
     {
         for (int i = 0; i < fichas.Length; i++)

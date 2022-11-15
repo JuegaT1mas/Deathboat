@@ -12,6 +12,7 @@ public class EnemyManager : MonoBehaviour
     public float chaseSpeed; //La velocidad a la que te sigue
     public float minimumDistance; //La distancia mínima a la que gira una vez cerca del punto
     //public float rotateSpeed;
+    public float distanceBetweenFloors;
 
 
 
@@ -83,11 +84,15 @@ public class EnemyManager : MonoBehaviour
         int index = 0;
         for (int i = 0; i < points.Length; i++) //Recorre todo el array y calcula el punto más cercano al actual
         {
-            float d = Vector3.Distance(transform.position, points[i].position);
-            if(d < distance)
+            float yd = Mathf.Abs(transform.position.y - points[i].position.y);//Comprobar que el punto está en el mismo piso (más realismo)
+            if(yd < distanceBetweenFloors) //Comprobar que la distancia entre los puntos es menor que la distancia entre los pisos
             {
-                distance = d;
-                index = i;
+                float xd = Vector3.Distance(transform.position, points[i].position); //Calcular la distancia entre los puntos
+                if (xd < distance) //Si la nueva distancia es menor que la antigua la guardamos
+                {
+                    distance = xd;
+                    index = i; //registramos el índice del nuevo punto más cercano
+                }
             }
         }
         destPoint = index;

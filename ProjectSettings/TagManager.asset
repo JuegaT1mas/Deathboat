@@ -10,6 +10,7 @@ TagManager:
   - DamageSource
   - Enemy
   - MainMenu
+  - AdminMenu
   layers:
   - Default
   - TransparentFX
